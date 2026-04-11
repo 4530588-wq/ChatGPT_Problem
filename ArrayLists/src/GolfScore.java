@@ -1,18 +1,17 @@
 /** Program that reads Golf scores of a group of athletes, computes the average score, and shows how each score
  * differs from the average score **/
+
 import java.util.*;
 public class GolfScore {
     public static void fillScores(ArrayList<Double> arr){
         Scanner scan = new Scanner(System.in);
-        double score = 0;
-        for(int i = 1; i<= arr.size(); i++){
-        System.out.print("Enter the score of athlete "+i+" : ");
+        double score;
+        System.out.print("Enter the score of athlete : ");
         score = scan.nextDouble();
             while(score >= 0){
                 arr.add(score);
                 score = scan.nextDouble();
             }
-        }
     }
     public static double average(ArrayList<Double> arr){
         double sum =0;
@@ -29,5 +28,13 @@ public class GolfScore {
             System.out.println(a+" differs from the average "+average+" by "+(a - average));
         }
     }
-    pu
+    public static void main(String[] args){
+        ArrayList<Double> scores = new ArrayList<>();
+        System.out.println( "Program simply takes scores, computes average and shows how each score differs from the average score :");
+        System.out.println(" ");
+        System.out.println("Enter golf scores : ");
+        fillScores(scores);
+        difference(scores);
+
+    }
 }
