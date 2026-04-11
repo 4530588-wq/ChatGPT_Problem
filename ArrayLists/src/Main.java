@@ -9,10 +9,11 @@ public class Main {
         while(!done){
             System.out.print("What item you are buying : ");
             next = scan.nextLine();
+            groceryList.add(next);
             System.out.println(" ");
-            System.out.println("Are you done yet : ");
+            System.out.print("Are you done yet : ");
             answer = scan.nextLine();
-            if(!answer.equalsIgnoreCase("yes")){
+            if(answer.equalsIgnoreCase("yes")){
                 done = true;
             }
         }
