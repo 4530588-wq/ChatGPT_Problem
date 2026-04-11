@@ -6,6 +6,17 @@ public class Main {
         boolean done = false;
         String next = null;
         String answer;
+        while(!done){
+            System.out.print("What item you are buying : ");
+            next = scan.nextLine();
+            System.out.println(" ");
+            System.out.println("Are you done yet : ");
+            answer = scan.nextLine();
+            if(!answer.equalsIgnoreCase("yes")){
+                done = true;
+            }
+        }
+        System.out.println("Items bought :");
         
     }
 }
