@@ -17,6 +17,9 @@ public class Main {
             }
         }
         System.out.println("Items bought :");
-        
+        for(String items : groceryList){
+            System.out.println(items);
+        }
+        scan.close();
     }
 }
