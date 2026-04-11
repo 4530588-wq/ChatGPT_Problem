@@ -20,6 +20,14 @@ public class GolfScore {
         for(double a : arr){
             sum += a;
         }
-        return double averageScore = sum/length;
+        double averageScore = sum/length;
+        return averageScore;
     }
+    public static void difference(ArrayList<Double> arr){
+        double average = average(arr);
+        for(double a: arr){
+            System.out.println(a+" differs from the average "+average+" by "+(a - average));
+        }
+    }
+    pu
 }
