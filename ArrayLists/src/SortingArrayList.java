@@ -9,7 +9,7 @@ public class SortingArrayList {
                 Collections.swap(arr, j + 1, j);
                 j--;
             }
-            Collections.swap(arr, j + 1, key);
+            arr.set(j+1,key);
         }
         System.out.println("Sorted array :\n " + arr.toString());
     }
