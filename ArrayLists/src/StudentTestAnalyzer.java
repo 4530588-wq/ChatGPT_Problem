@@ -28,6 +28,26 @@ public class StudentTestAnalyzer {
         return total/arr.size();
     }
     public static double highest(ArrayList<Double> arr){
-        
+        double max = -1;
+        for(int i=0; i<arr.size(); i++){
+            for(double b : arr){
+                if(b >= max){
+                    max = b;
+                }
+            }
+        }
+        return max;
     }
+    public static double lowest(ArrayList<Double> arr){
+        double min = 10000;
+        for(int i=0; i<arr.size(); i++){
+            for(double b : arr){
+                if(b <= min){
+                    min = b;
+                }
+            }
+        }
+        return min;
+    }
+    
 }
