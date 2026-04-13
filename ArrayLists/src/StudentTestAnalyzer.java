@@ -12,11 +12,10 @@ import java.util.*;
 public class StudentTestAnalyzer {
     public static void fillScores(ArrayList<Double> arr){
         Scanner scan = new Scanner(System.in);
-        ArrayList<Double> scores = new ArrayList<>();
         System.out.print("Enter a mark : ");
         double mark = scan.nextDouble();
-        while(mark != -1){
-            scores.add(mark);
+        while(mark >= 0){
+            arr.add(mark);
             mark = scan.nextDouble();
         }
     }
@@ -28,26 +27,43 @@ public class StudentTestAnalyzer {
         return total/arr.size();
     }
     public static double highest(ArrayList<Double> arr){
-        double max = -1;
-        for(int i=0; i<arr.size(); i++){
+        double max = arr.get(0);
             for(double b : arr){
-                if(b >= max){
+                if(b > max){
                     max = b;
                 }
             }
-        }
         return max;
     }
     public static double lowest(ArrayList<Double> arr){
-        double min = 10000;
-        for(int i=0; i<arr.size(); i++){
+        double min = arr.get(0);
             for(double b : arr){
-                if(b <= min){
+                if(b < min){
                     min = b;
                 }
-            }
         }
         return min;
     }
-    
+    public static void main(String[] args){
+        ArrayList<Double> scores = new ArrayList<>();
+        fillScores(scores);
+        System.out.println("These are the scores \n");
+        for(double a : scores){
+            System.out.print(a+" ");
+        }
+        System.out.println(" ");
+        double averageMark = average(scores);
+        System.out.println("The average mark is "+averageMark+ " ,the highest mark obtained is "+highest(scores)+" ,the lowest is "+lowest(scores));
+        for(double k : scores){
+            if(k > averageMark){
+                System.out.println("Student with mark "+k+" scored above the average mark");
+            }
+            else if(k < averageMark){
+                System.out.println("Student with mark "+k+" scored below the average mark");
+            }
+            else{
+                System.out.println("Student with mark "+k+" scored equal the average mark");
+            }
+        }
+    }
 }
